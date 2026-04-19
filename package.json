@@ -1,6 +1,6 @@
 {
   "name": "cipher-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cipher - Neural Synthesis AI CLI",
   "bin": {
     "cipher": "./dist/index.mjs"
