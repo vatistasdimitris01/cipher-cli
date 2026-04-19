@@ -1,0 +1,10 @@
+{
+  "databaseURL": "https://gen-lang-client-0930011385.firebaseio.com",
+  "databaseId": "gen-lang-client-0930011385",
+  "projectId": "gen-lang-client-0930011385",
+  "storageBucket": "gen-lang-client-0930011385.appspot.com",
+  "apiKey": "YOUR_CLIENT_API_KEY",
+  "authDomain": "gen-lang-client-0930011385.firebaseapp.com",
+  "messagingSenderId": "108679344229797629225",
+  "appId": "1:108679344229797629225:web:YOUR_APP_ID"
+}

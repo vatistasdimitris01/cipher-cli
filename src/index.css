@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cipher-black: #0A0A0A;
+  --color-cipher-dark: #141414;
+  --color-cipher-card: #1F1F1F;
+  --color-cipher-border: #262626;
+  --color-cipher-muted: #A1A1A1;
+  --color-cipher-accent: #3B82F6;
+  --color-cipher-accent-hover: #2563EB;
+
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--color-cipher-black);
+  color: #FAFAFA;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cipher-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-cipher-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cipher-muted);
+}
+
+::selection {
+  background: var(--color-cipher-accent);
+  color: white;
+}
+
+input, textarea, button {
+  font-family: inherit;
+}
+
+a {
+  color: var(--color-cipher-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
