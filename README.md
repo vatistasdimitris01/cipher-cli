@@ -4,16 +4,21 @@ Neural Synthesis AI Assistant - Command Line Interface
 
 ## Quick Install
 
+### macOS / Linux
 ```bash
-# Clone the repo
-git clone https://github.com/YOUR_USERNAME/cipher-cli.git
+curl -sL https://raw.githubusercontent.com/vatistasdimitris01/cipher-cli/main/install.sh | bash
+```
+
+### Windows (PowerShell as Admin)
+```powershell
+irm https://raw.githubusercontent.com/vatistasdimitris01/cipher-cli/main/install.ps1 | iex
+```
+
+### Or manually
+```bash
+git clone https://github.com/vatistasdimitris01/cipher-cli.git
 cd cipher-cli
-
-# Install globally
 npm install -g .
-
-# Or use without installing
-npx cipher-cli chat "hello"
 ```
 
 ## Commands
@@ -21,7 +26,7 @@ npx cipher-cli chat "hello"
 | Command | Description |
 |---------|-------------|
 | `cipher login` | Get link code and authenticate |
-| `cipher verify <code>` | Verify a code (from web) |
+| `cipher verify <code>` | Verify a code manually |
 | `cipher chat <msg>` | Send a message |
 | `cipher whoami` | Show current user |
 | `cipher logout` | Log out |
@@ -29,29 +34,30 @@ npx cipher-cli chat "hello"
 ## Usage
 
 ```bash
-# Login - get a code
+# Login - get a verification code
 cipher login
-# Shows: CIPH-XXXX
+# Shows: Your link code: CIPH-XXXX
 
-# Visit https://ciphertheai.vercel.app/auth?code=CIPH-XXXX
-# Sign in with Google, click Confirm
+# Visit: https://ciphertheai.vercel.app/auth?code=CIPH-XXXX
+# Sign in with Google, click "Confirm"
 
-# CLI auto-verifies and saves credentials!
+# CLI automatically verifies and saves credentials!
 
 # Now chat
-cipher chat "write a hello world in python"
+cipher chat "hello, write a python hello world"
 
 # Or verify manually if login times out
 cipher verify CIPH-XXXX
 ```
 
-## Development
+## Requirements
 
-```bash
-# Run locally
-npm install
-npx tsx cli.ts login
-```
+- Node.js 18+
+- Internet connection
+
+## Web App
+
+Use the web interface: https://ciphertheai.vercel.app
 
 ## License
 
