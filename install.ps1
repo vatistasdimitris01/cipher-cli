@@ -18,7 +18,7 @@ Set-Location $TEMP_DIR
 
 # Clone
 Write-Host "📦 Downloading Cipher CLI..." -ForegroundColor Cyan
-git clone --depth 1 https://github.com/YOUR_USER/cipher-cli.git . 2>$null
+git clone --depth 1 https://github.com/vatistasdimitris01/cipher-cli.git . 2>$null
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host "❌ Failed to clone. Update the repo URL in this script." -ForegroundColor Red

@@ -19,7 +19,7 @@ cd "$TEMP_DIR"
 
 # Clone or download
 echo "📦 Downloading Cipher CLI..."
-git clone --depth 1 https://github.com/YOUR_USER/cipher-cli.git . 2>/dev/null || {
+git clone --depth 1 https://github.com/vatistasdimitris01/cipher-cli.git . 2>/dev/null || {
     echo "❌ Failed to clone. Update the repo URL in this script."
     exit 1
 }
