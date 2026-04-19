@@ -1,20 +1,11 @@
 {
   "name": "cipher-cli",
   "version": "1.0.0",
-  "description": "Cipher - Neural Synthesis AI Assistant CLI",
-  "main": "dist/index.cjs",
+  "description": "Cipher - Neural Synthesis AI CLI",
   "bin": {
-    "cipher": "./dist/index.cjs"
+    "cipher": "./dist/index.mjs"
   },
   "engines": {
     "node": ">=18"
-  },
-  "scripts": {
-    "build": "node build.js"
-  },
-  "dependencies": {},
-  "devDependencies": {},
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }

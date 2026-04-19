@@ -1,5 +1,4 @@
 #!/bin/bash
-# Cipher CLI Install Script
 
 echo "🤖 Installing Cipher CLI..."
 
@@ -10,9 +9,16 @@ fi
 
 echo "Node.js: $(node --version)"
 
-# Get the repo
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-cd "$SCRIPT_DIR"
+# Create temp dir
+TEMP=$(mktemp -d)
+cd "$TEMP"
+
+# Download the repo
+echo "📦 Downloading..."
+git clone --depth 1 https://github.com/vatistasdimitris01/cipher-cli.git . 2>/dev/null || {
+    echo "❌ Download failed."
+    exit 1
+}
 
 # Build
 echo "🔨 Building..."
@@ -22,10 +28,6 @@ node build.js 2>/dev/null
 echo "🔧 Installing..."
 npm install -g .
 
-# Add to PATH
-echo 'export PATH="$(npm root -g)/bin:$PATH"' >> ~/.zshrc 2>/dev/null || true
-export PATH="$(npm root -g)/bin:$PATH"
-
 echo ""
 echo "✅ Installed!"
 echo ""
@@ -33,3 +35,7 @@ echo "Run in new terminal:"
 echo "  cipher login"
 echo "  cipher chat hello"
 echo ""
+
+# Cleanup
+cd -
+rm -rf "$TEMP"
