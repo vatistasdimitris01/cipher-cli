@@ -1,42 +1,35 @@
 #!/bin/bash
-
 # Cipher CLI Install Script
-# Usage: curl -sL https://raw.githubusercontent.com/YOUR_USER/cipher-cli/main/install.sh | bash
 
 echo "🤖 Installing Cipher CLI..."
 
-# Check Node.js
 if ! command -v node &> /dev/null; then
-    echo "❌ Node.js not found. Install from https://nodejs.org"
+    echo "❌ Node.js not found."
     exit 1
 fi
 
-echo "Node.js version: $(node --version)"
+echo "Node.js: $(node --version)"
 
-# Create temp dir
-TEMP_DIR=$(mktemp -d)
-cd "$TEMP_DIR"
+# Get the repo
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
 
-# Clone or download
-echo "📦 Downloading Cipher CLI..."
-git clone --depth 1 https://github.com/vatistasdimitris01/cipher-cli.git . 2>/dev/null || {
-    echo "❌ Failed to clone. Update the repo URL in this script."
-    exit 1
-}
+# Build
+echo "🔨 Building..."
+node build.js 2>/dev/null
 
 # Install globally
 echo "🔧 Installing..."
 npm install -g .
 
+# Add to PATH
+echo 'export PATH="$(npm root -g)/bin:$PATH"' >> ~/.zshrc 2>/dev/null || true
+export PATH="$(npm root -g)/bin:$PATH"
+
 echo ""
 echo "✅ Installed!"
 echo ""
-echo "Usage:"
+echo "Run in new terminal:"
 echo "  cipher login"
-echo "  cipher chat <message>"
-echo "  cipher whoami"
+echo "  cipher chat hello"
 echo ""
-
-# Cleanup
-cd -
-rm -rf "$TEMP_DIR"
